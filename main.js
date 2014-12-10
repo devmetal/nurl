@@ -1,37 +1,33 @@
 #!/usr/bin/env node
-var Q      = require('Q');
+
 var comm   = require('commander');
-var request = require('request');
+
 
 comm.version('0.0.1')
-	.option('-u, --url', 'Target URL to request.')
-	.option('-m, --method', 'Request method.')
-	.option('-d, --data', 'Request payload')
-	.parse(process.argv);
+	.option('-d, --doc', 'Read the documentation')
+	.option('-db, --database', 'Read the database for requests');
+	.option('-f, --flag <name>'. 'Read the database for requests');
 
-function proxyRequest(url,options) {
-	options = options || {};
-	options['proxy'] = '*****';
-	options['url'] = url;
-
-	var def = Q.defer();
-
-	request(options,function(error,response,body){
-		if (!error) {
-			def.resolve([body,response]);
-		} else {
-			def.reject(error);
-		}
+comm.command('req <url>')
+	.description('Create a request.')
+	.option('-t, --contentType <type>', 'Request content type. Default application/json')
+	.option('-m, --method <method>', 'Request method. Default GET')
+	.option('-d, --data <data>', 'Request payload. Default empty')
+	.option('-l, --log <file>', 'Set a file to log request')
+	.action(function(url, options){
+		console.log("Request command");
 	});
 
-	return def.promise;
-}
-
-proxyRequest('http://google.com')
-	.spread(function(body,response){
-		console.log(response.headers);
-		console.log(body);
-	})
-	.catch(function(error){
-		console.log(error);
+comm.command('store <tag> [tags...]')
+	.description('Storing the last request in the database with tag')
+	.action(function(flag,otherFlags){
+		console.log("Store command");
 	});
+
+comm.command('ui')
+	.description('Open the web application.')
+	.action(function(){
+		
+	});
+
+comm.parse(process.argv);

@@ -9,5 +9,11 @@
   	"q":"~1.1.0",
     "commander":"2.5.0",
     "request":"2.49.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-mocha-test": "0.12.4",
+    "chai":"~1.10.0",
+    "nock":"0.51.0"
   }
 }
