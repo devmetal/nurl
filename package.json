@@ -1,0 +1,13 @@
+{
+  "name": "nurl",
+  "version": "0.0.1",
+  "description": "Nodejs rest api tester",
+  "main": "main.js",
+  "author": "Metál Ádám",
+  "license": "MIT",
+  "dependencies": {
+  	"q":"~1.1.0",
+    "commander":"2.5.0",
+    "request":"2.49.0"
+  }
+}
