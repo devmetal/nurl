@@ -8,7 +8,8 @@
   "dependencies": {
   	"q":"~1.1.0",
     "commander":"2.5.0",
-    "request":"2.49.0"
+    "request":"2.49.0",
+    "JSONStream":"0.10.0"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
