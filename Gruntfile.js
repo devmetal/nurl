@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 				ui:'tdd',
 				captureFile: 'results.txt'
 			},
-			src:['unit/**/*.js']
+			src:['lib/tests/**/*.js']
 		}
 
 	});
