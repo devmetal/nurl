@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
 		mochaTest: {
 			options: {
-				reporter: 'nyan',
+				reporter: 'spec',
 				ui:'tdd',
 				captureFile: 'results.txt'
 			},
