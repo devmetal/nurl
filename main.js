@@ -6,7 +6,7 @@ var comm   = require('commander');
 comm.version('0.0.1')
 	.option('-d, --doc', 'Read the documentation')
 	.option('-db, --database', 'Read the database for requests');
-	.option('-f, --flag <name>'. 'Read the database for requests');
+	.option('-t, --t <name>'. 'Read the database for requests');
 
 comm.command('req <url>')
 	.description('Create a request.')
